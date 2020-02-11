@@ -31,3 +31,5 @@ docker run --net mynet --name mongo-rs0-2 -d -v mongo-rs0-2:/data/db -p 27018:27
 docker run --net mynet --name mongo-rs0-3 -d -v mongo-rs0-3:/data/db -p 27019:27017 mongo-rs0-3
 
 docker run --net mynet --name mongo-rs-setup mongo-rs-setup
+
+echo "Done"
