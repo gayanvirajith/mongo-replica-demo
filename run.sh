@@ -2,6 +2,8 @@
 
 echo "Running mongo replica set"
 
+docker network create mynet
+
 docker stop mongo-rs0-1 && docker rm mongo-rs0-1
 
 docker stop mongo-rs0-2 && docker rm mongo-rs0-2
