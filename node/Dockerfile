@@ -13,9 +13,6 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app/
 
-#expose the port 4004
-#EXPOSE 4004
-
 #start nodejs server
 CMD node index.js
 
