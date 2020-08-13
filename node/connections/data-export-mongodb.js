@@ -43,7 +43,7 @@ class DataExport {
 
     getConnectionUrl() {
         if (config.app == 'dev') {
-            return `mongodb://${config.dbHost1}:27017/${config.dbName}`;
+            return `mongodb://${config.dbHost1}:${config.dbPort1},${config.dbHost2}:${config.dbPort2},${config.dbHost2}:${config.dbPort3}/${config.dbName}`;
         } else {
             const connectionString = 'mongodb://' +
                 config.dbUser +
