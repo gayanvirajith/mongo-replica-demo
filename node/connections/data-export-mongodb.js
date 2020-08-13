@@ -4,6 +4,7 @@ const config = require('../config');
 class DataExport {
     constructor() {
         this.connectionString = this.getConnectionUrl();
+	console.log(this.connectionString);
     }
 
     closeConnection() {
