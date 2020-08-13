@@ -11,7 +11,7 @@ const debug = config.debug;
             .find({})
             .limit(1)
             .toArray();
-	console.log(JSON.stringify(results);
+	console.log(JSON.stringify(results));
         dataExportDb.closeConnection();
     } catch (error) {
 	console.error(error.stack)
