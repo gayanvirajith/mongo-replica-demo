@@ -55,13 +55,13 @@ class DataExport {
             //     'mongodb://%s,%s/?replicaSet=%s&readPreference=%s',
             //     `${config.dbHost1}:${config.dbPort1}`,
             //     `${config.dbHost2}:${config.dbPort2}`,
-            //     `${config.dbHost2}:${config.dbPort3}`,
+            //     `${config.dbHost3}:${config.dbPort3}`,
             //     config.replicaSet,
             //     readPreference
             // );
             const url = format(
                 'mongodb://%s/',
-                `${config.dbHost2}:${config.dbPort3}`,
+                `${config.dbHost2}:${config.dbPort2}`,
             );
 
             return url;
