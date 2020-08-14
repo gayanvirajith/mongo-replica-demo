@@ -1,6 +1,6 @@
 const { MongoClient, ReadPreference } = require('mongodb');
 const config = require('../config');
-
+const format = require('util').format
 class DataExport {
     constructor() {
         this.connectionString = this.getConnectionUrl();
@@ -49,11 +49,18 @@ class DataExport {
             // ${config.dbHost2}:${config.dbPort3}
             // /?readPreference=secondary&replicaSet=${config.replicaSet}`;
             const readPreference = 'secondaryPreferred'
-            return `mongodb://
-            ${config.dbHost1}:${config.dbPort1},
-            ${config.dbHost2}:${config.dbPort2},
-            ${config.dbHost2}:${config.dbPort3}
-            /?readPreference=${readPreference}&replicaSet=${config.replicaSet}`;
+
+            const url = format(
+                'mongodb://%s,%s,%s/%s?replicaSet=%s&readPreference=%s',
+                `${config.dbHost1}:${config.dbPort1}`,
+                `${config.dbHost2}:${config.dbPort2}`,
+                `${config.dbHost2}:${config.dbPort3}`,
+                readPreference,
+                config.replicaSet
+            );
+
+            return url;
+            // return `mongodb://${config.dbHost1}:${config.dbPort1},${config.dbHost2}:${config.dbPort2},${config.dbHost2}:${config.dbPort3}/?readPreference=${readPreference}&replicaSet=${config.replicaSet}`;
 
         } else {
             const connectionString = 'mongodb://' +
@@ -70,4 +77,4 @@ class DataExport {
     }
 }
 
-module.exports = new DataExport();
+
