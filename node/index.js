@@ -4,19 +4,18 @@ const debug = config.debug;
 
 (async () => {
     try {
-	console.log('node mongo check!')
-	const db = await dataExportDb.getConnection();
-	const results = await db
+        console.log('node mongo check!')
+        const db = await dataExportDb.getConnection();
+        const results = await db
             .collection('posts')
             .find({})
             .limit(1)
             .toArray();
-	console.log(JSON.stringify(results));
+        console.log(JSON.stringify(results));
         dataExportDb.closeConnection();
     } catch (error) {
-	console.error(error.stack)
+        console.error(error.stack)
     } finally {
-	console.log('all done')
+        console.log('all done')
     }
 })();
-
