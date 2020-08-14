@@ -8,7 +8,7 @@ const mongoUri = format('mongodb://%s,%s,%s/%s?replicaSet=%s',
   "test",
   "rs0");
 
-console.log(url);
+console.log(mongoUri);
 
 // const mongoUri = "mongodb://<dbUser>:<dbPassword>@<host1>:<port1>,<host2>:<port2>/<dbName>?replicaSet=<replicaSetName>";
 
