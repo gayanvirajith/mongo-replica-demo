@@ -18,7 +18,7 @@ const debug = config.debug;
         // console.log('ping: ' + JSON.stringify(pingResult));
         // console.log(JSON.stringify(results));
 
-        const collections = await db.collections();
+        const collections = await db.collections().toArray();
         console.log('collections: ' + JSON.stringify(collections))
         dataExportDb.closeConnection();
     } catch (error) {
