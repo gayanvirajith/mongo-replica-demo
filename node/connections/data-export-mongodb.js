@@ -49,7 +49,7 @@ class DataExport {
             // ${config.dbHost2}:${config.dbPort3}
             // /?readPreference=secondary&replicaSet=${config.replicaSet}`;
             // const readPreference = 'secondaryPreferred'
-            const readPreference = 'secondary'
+            // const readPreference = 'secondary'
             const readPreference = 'primary'
             console.log('trying to get url: ')
 
