@@ -11,6 +11,12 @@ const debug = config.debug;
             .find({})
             .limit(1)
             .toArray();
+
+
+        // Execute ping against the server
+        const pingResult = await db.command({ping:1});
+        console.log('ping: ' + JSON.stringify(pingResult));
+
         console.log(JSON.stringify(results));
         dataExportDb.closeConnection();
     } catch (error) {
