@@ -52,8 +52,8 @@ class DataExport {
             console.log('trying to get url: ')
 
             const url = format(
-                'mongodb://%s,%s,%s/?replicaSet=%s&readPreference=%s',
-                `${config.dbHost1}:${config.dbPort1}`,
+                'mongodb://%s,%s/?replicaSet=%s&readPreference=%s',
+                // `${config.dbHost1}:${config.dbPort1}`,
                 `${config.dbHost2}:${config.dbPort2}`,
                 `${config.dbHost2}:${config.dbPort3}`,
                 config.replicaSet,
