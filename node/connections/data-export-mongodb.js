@@ -23,7 +23,7 @@ class DataExport {
             const oldOptions = {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
-                readPreference: ReadPreference.SECONDARY_PREFERRED
+                // readPreference: ReadPreference.SECONDARY_PREFERRED
             };
             // Use connect method to connect to the Server
             MongoClient.connect(
