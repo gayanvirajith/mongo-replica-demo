@@ -56,8 +56,8 @@ class DataExport {
                 `${config.dbHost1}:${config.dbPort1}`,
                 `${config.dbHost2}:${config.dbPort2}`,
                 `${config.dbHost2}:${config.dbPort3}`,
-                readPreference,
-                config.replicaSet
+                config.replicaSet,
+                readPreference
             );
             return url;
             // return `mongodb://${config.dbHost1}:${config.dbPort1},${config.dbHost2}:${config.dbPort2},${config.dbHost2}:${config.dbPort3}/?readPreference=${readPreference}&replicaSet=${config.replicaSet}`;
