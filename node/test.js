@@ -2,9 +2,9 @@ const format = require('util').format;
 const MongoClient = require('mongodb').MongoClient;
 
 const mongoUri = format('mongodb://%s,%s,%s/%s?replicaSet=%s',
-  "localhost:27017",
-  "localhost:27018",
-  "localhost:27019",
+  "172.168.3.83:27017",
+  "172.168.3.83:27018",
+  "172.168.3.83:27019",
   "test",
   "rs0");
 
