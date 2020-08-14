@@ -22,7 +22,7 @@ class DataExport {
             }
             const oldOptions = {
                 useNewUrlParser: true,
-                // useUnifiedTopology: true,
+                useUnifiedTopology: true,
                 // readPreference: ReadPreference.SECONDARY_PREFERRED
             };
             // Use connect method to connect to the Server
