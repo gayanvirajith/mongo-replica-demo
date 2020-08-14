@@ -20,6 +20,7 @@ const debug = config.debug;
         dataExportDb.closeConnection();
     } catch (error) {
         console.error(error.stack)
+        process.exit();
     } finally {
         console.log('all done')
     }
