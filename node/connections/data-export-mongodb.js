@@ -50,6 +50,7 @@ class DataExport {
             // /?readPreference=secondary&replicaSet=${config.replicaSet}`;
             // const readPreference = 'secondaryPreferred'
             const readPreference = 'secondary'
+            const readPreference = 'primary'
             console.log('trying to get url: ')
 
             const url = format(
