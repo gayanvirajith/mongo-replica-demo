@@ -44,7 +44,7 @@ class DataExport {
     getConnectionUrl() {
         if (config.app == 'dev') {
             
-            const readPreference = 'primary'
+            const readPreference = 'secondary'
             // const url = format(
             //     'mongodb://%s,%s,%s/?replicaSet=%s&readPreference=%s',
             //     `${config.dbHost1}:${config.dbPort1}`,
