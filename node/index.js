@@ -6,17 +6,20 @@ const debug = config.debug;
     try {
         console.log('node mongo check!')
         const db = await dataExportDb.getConnection();
-        const results = await db
-            .collection('posts')
-            .find({})
-            .limit(1)
-            .toArray();
+        // const results = await db
+        //     .collection('posts')
+        //     .find({})
+        //     .limit(1)
+        //     .toArray();
 
 
-        // Execute ping against the server
-        const pingResult = await db.command( { isMaster: 1 });
-        console.log('ping: ' + JSON.stringify(pingResult));
-        console.log(JSON.stringify(results));
+        // // Execute ping against the server
+        // const pingResult = await db.command( { isMaster: 1 });
+        // console.log('ping: ' + JSON.stringify(pingResult));
+        // console.log(JSON.stringify(results));
+
+        const collections = await db.collections();
+        console.log('collections: ' + JSON.stringify(collections))
         dataExportDb.closeConnection();
     } catch (error) {
         console.error(error.stack)
