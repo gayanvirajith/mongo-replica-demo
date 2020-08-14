@@ -51,16 +51,16 @@ class DataExport {
             const readPreference = 'secondaryPreferred'
             console.log('trying to get url: ')
 
-            // const url = format(
-            //     'mongodb://%s,%s,%s/%s?replicaSet=%s&readPreference=%s',
-            //     `${config.dbHost1}:${config.dbPort1}`,
-            //     `${config.dbHost2}:${config.dbPort2}`,
-            //     `${config.dbHost2}:${config.dbPort3}`,
-            //     readPreference,
-            //     config.replicaSet
-            // );
-            // return url;
-            return `mongodb://${config.dbHost1}:${config.dbPort1},${config.dbHost2}:${config.dbPort2},${config.dbHost2}:${config.dbPort3}/?readPreference=${readPreference}&replicaSet=${config.replicaSet}`;
+            const url = format(
+                'mongodb://%s,%s,%s/%s?replicaSet=%s&readPreference=%s',
+                `${config.dbHost1}:${config.dbPort1}`,
+                `${config.dbHost2}:${config.dbPort2}`,
+                `${config.dbHost2}:${config.dbPort3}`,
+                readPreference,
+                config.replicaSet
+            );
+            return url;
+            // return `mongodb://${config.dbHost1}:${config.dbPort1},${config.dbHost2}:${config.dbPort2},${config.dbHost2}:${config.dbPort3}/?readPreference=${readPreference}&replicaSet=${config.replicaSet}`;
 
         } else {
             const connectionString = 'mongodb://' +
@@ -77,4 +77,4 @@ class DataExport {
     }
 }
 
-
+module.exports = new DataExport();
