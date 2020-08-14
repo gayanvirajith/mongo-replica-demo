@@ -14,7 +14,7 @@ const debug = config.debug;
 
 
         // Execute ping against the server
-        const pingResult = await db.command({ping:1});
+        const pingResult = await db.command( { isMaster: 1 });
         console.log('ping: ' + JSON.stringify(pingResult));
         console.log(JSON.stringify(results));
         dataExportDb.closeConnection();
