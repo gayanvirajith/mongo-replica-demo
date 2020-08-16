@@ -54,11 +54,21 @@ class DataExport {
             //     readPreference
             // );
 
+            // const url = format(
+            //     'mongodb://%s:%s@%s,%s,%s/?replicaSet=%s&authSource=admin',
+            //     `${config.dbUser}`,
+            //     `${config.dbPassword}`,
+            //     `${config.dbHost1}:${config.dbPort1}`,
+            //     `${config.dbHost2}:${config.dbPort2}`,
+            //     `${config.dbHost3}:${config.dbPort3}`,
+            //     config.replicaSet
+            // );
+
             const url = format(
-                'mongodb://%s:%s@%s,%s,%s/?replicaSet=%s&authSource=admin',
+                'mongodb://%s:%s@%s,%s/?replicaSet=%s&authSource=admin',
                 `${config.dbUser}`,
                 `${config.dbPassword}`,
-                // `${config.dbHost1}:${config.dbPort1}`,
+                `${config.dbHost1}:${config.dbPort1}`,
                 `${config.dbHost2}:${config.dbPort2}`,
                 `${config.dbHost3}:${config.dbPort3}`,
                 config.replicaSet
