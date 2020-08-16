@@ -54,41 +54,28 @@ class DataExport {
             //     readPreference
             // );
 
-            // const url = format(
-            //     'mongodb://%s:%s@%s,%s,%s/?replicaSet=%s&authSource=admin',
-            //     `${config.dbUser}`,
-            //     `${config.dbPassword}`,
-            //     `${config.dbHost1}:${config.dbPort1}`,
-            //     `${config.dbHost2}:${config.dbPort2}`,
-            //     `${config.dbHost3}:${config.dbPort3}`,
-            //     config.replicaSet
-            // );
-
             const url = format(
-                'mongodb://%s:%s@%s',
+                'mongodb://%s:%s@%s,%s,%s/?replicaSet=%s&authSource=admin',
                 `${config.dbUser}`,
                 `${config.dbPassword}`,
-                // `${config.dbHost1}:${config.dbPort1}`,
-                `${config.dbHost3}:${config.dbPort3}`
-                // config.replicaSet
+                `${config.dbHost1}:${config.dbPort1}`,
+                `${config.dbHost2}:${config.dbPort2}`,
+                `${config.dbHost3}:${config.dbPort3}`,
+                config.replicaSet
             );
 
-            // const connectionString = 'mongodb://' +
-            //     config.dbUser +
-            //     ':' +
-            //     config.dbPassword +
-            //     '@' +
-            //     config.dbHost1 +
-            //     ':' +
-            //     config.dbPort1 +
-            //     '/?authSource=admin'
-
+            /**
+             * Below approach used to connect mongodb using replica node
+             */
             // const url = format(
-            //     'mongodb://%s/',
-            //     `${config.dbHost2}:${config.dbPort2}`,
+            //     'mongodb://%s:%s@%s',
+            //     `${config.dbUser}`,
+            //     `${config.dbPassword}`,
+            //     `${config.dbHost3}:${config.dbPort3}`
             // );
-
+            
             return url;
+            
             // return `mongodb://${config.dbHost1}:${config.dbPort1},${config.dbHost2}:${config.dbPort2},${config.dbHost2}:${config.dbPort3}/?readPreference=${readPreference}&replicaSet=${config.replicaSet}`;
 
         } else {
