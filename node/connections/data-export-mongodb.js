@@ -55,7 +55,7 @@ class DataExport {
             // );
 
             const url = format(
-                'mongodb://%s:%s@%s,%s,%s/?replicaSet=%s&authSource=admin',
+                'mongodb://%s:%s@%s,%s,%s/?authSource=admin&replicaSet=%s',
                 `${config.dbUser}`,
                 `${config.dbPassword}`,
                 `${config.dbHost1}:${config.dbPort1}`,
